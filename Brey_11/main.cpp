@@ -77,7 +77,7 @@ double*** read_file(string& directory)
 			f >> datas[0][i][j] >> datas[1][i][j];
 			datas[2][i][j] = datas[0][i][j] * datas[1][i][j];
 		}
-		cout << "Ñ÷èòàíî " << i + 1 << "/30 ôàéëîâ\n";
+		cout << "Ğ¡Ñ‡Ğ¸Ñ‚Ğ°Ğ½Ğ¾ " << i + 1 << "/30 Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ²\n";
 		f.close();
 	}
 	return datas;
@@ -88,15 +88,15 @@ string column_to_name(int column_index)
 	switch (column_index)
 	{
 	case 0:
-		return "Ìîëîêî";
+		return "ĞœĞ¾Ğ»Ğ¾ĞºĞ¾";
 	case 1:
-		return "Ñìåòàíà";
+		return "Ğ¡Ğ¼ĞµÑ‚Ğ°Ğ½Ğ°";
 	case 2:
-		return "Òâîğîã";
+		return "Ğ¢Ğ²Ğ¾Ñ€Ğ¾Ğ³";
 	case 3:
-		return "Ìàñëî";
+		return "ĞœĞ°ÑĞ»Ğ¾";
 	case 4:
-		return "Ñûğ";
+		return "Ğ¡Ñ‹Ñ€";
 	}
 }
 
@@ -110,7 +110,7 @@ void gen_files(string& directory)
 		{
 			f << rand() % 1000 / 10. << " " << rand() % 15 << "\n";
 		}
-		cout << "Ñãåíåğèğîâàí " << i + 1 << "/30 ôàéëîâ\n";
+		cout << "Ğ¡Ğ³ĞµĞ½ĞµÑ€Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½ " << i + 1 << "/30 Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ²\n";
 		f.close();
 	}
 }
@@ -119,20 +119,20 @@ int main()
 {
 	setlocale(LC_ALL, "russian");
 
-	cout << "Ïğîãğàììó ñäåëàëà Áğåé Âàëåğèÿ ñòóäåíò ãğóïïû ÓÌË-112\n";
-	cout << "Ïğîãğàììà äëÿ ğàñ÷¸òà ïğèáûëåé êîòà Ìàòğîñêèíà\n";
+	cout << "ĞŸÑ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ñƒ ÑĞ´ĞµĞ»Ğ°Ğ»Ğ° Ğ‘Ñ€ĞµĞ¹ Ğ’Ğ°Ğ»ĞµÑ€Ğ¸Ñ ÑÑ‚ÑƒĞ´ĞµĞ½Ñ‚ Ğ³Ñ€ÑƒĞ¿Ğ¿Ñ‹ Ğ£ĞœĞ›-112\n";
+	cout << "ĞŸÑ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ğ° Ğ´Ğ»Ñ Ñ€Ğ°ÑÑ‡Ñ‘Ñ‚Ğ° Ğ¿Ñ€Ğ¸Ğ±Ñ‹Ğ»ĞµĞ¹ ĞºĞ¾Ñ‚Ğ° ĞœĞ°Ñ‚Ñ€Ğ¾ÑĞºĞ¸Ğ½Ğ°\n";
 
 	string path = "data/";
 
 	if (false)
 	{
-		cout << "Çàïóùåí ğåæèì ãåíåğàöèè ôàéëîâ!\n";
+		cout << "Ğ—Ğ°Ğ¿ÑƒÑ‰ĞµĞ½ Ñ€ĞµĞ¶Ğ¸Ğ¼ Ğ³ĞµĞ½ĞµÑ€Ğ°Ñ†Ğ¸Ğ¸ Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ²!\n";
 		gen_files(path);
-		cout << "Ôàéëû ñãåíåğèğîâàíû!\n";
+		cout << "Ğ¤Ğ°Ğ¹Ğ»Ñ‹ ÑĞ³ĞµĞ½ĞµÑ€Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ñ‹!\n";
 	}
 	else
 	{
-		cout << "Çàïóùåí ğåæèì ğàñ÷¸òà!\n";
+		cout << "Ğ—Ğ°Ğ¿ÑƒÑ‰ĞµĞ½ Ñ€ĞµĞ¶Ğ¸Ğ¼ Ñ€Ğ°ÑÑ‡Ñ‘Ñ‚Ğ°!\n";
 		double*** datas = read_file(path);
 		if (datas != nullptr)
 		{
@@ -145,35 +145,35 @@ int main()
 			int worst_average_price_index = find_min_col_sum_index(prices);
 			double worst_average_price = sum_col(prices, worst_average_price_index) / 30.;
 
-			cout << "Ëó÷øàÿ ñğåäíÿÿ öåíà íà òîâàğ '" << column_to_name(finest_average_price_index) << "' â äåíü: " <<
-				finest_average_price << " ğ\n";
-			cout << "Õóäøàÿ ñğåäíÿÿ öåíà íà òîâàğ '" << column_to_name(worst_average_price_index) << "' â äåíü: " <<
-				worst_average_price << " ğ\n";
+			cout << "Ğ›ÑƒÑ‡ÑˆĞ°Ñ ÑÑ€ĞµĞ´Ğ½ÑÑ Ñ†ĞµĞ½Ğ° Ğ½Ğ° Ñ‚Ğ¾Ğ²Ğ°Ñ€ '" << column_to_name(finest_average_price_index) << "' Ğ² Ğ´ĞµĞ½ÑŒ: " <<
+				finest_average_price << " Ñ€\n";
+			cout << "Ğ¥ÑƒĞ´ÑˆĞ°Ñ ÑÑ€ĞµĞ´Ğ½ÑÑ Ñ†ĞµĞ½Ğ° Ğ½Ğ° Ñ‚Ğ¾Ğ²Ğ°Ñ€ '" << column_to_name(worst_average_price_index) << "' Ğ² Ğ´ĞµĞ½ÑŒ: " <<
+				worst_average_price << " Ñ€\n";
 
 			int finest_average_count_index = find_max_col_sum_index(counts);
 			double finest_average_count = sum_col(counts, finest_average_count_index) / 30.;
 			int worst_average_count_index = find_min_col_sum_index(counts);
 			double worst_average_count = sum_col(counts, worst_average_count_index) / 30.;
 
-			cout << "Ëó÷øèé ñğåäíèé ñáûò òîâàğà '" << column_to_name(finest_average_count_index) << "' â äåíü: " <<
-				finest_average_count << " øò\n";
-			cout << "Õóäøèé ñğåäíèé ñáûò òîâàğà '" << column_to_name(worst_average_count_index) << "' â äåíü: " <<
-				worst_average_count << " øò\n";
+			cout << "Ğ›ÑƒÑ‡ÑˆĞ¸Ğ¹ ÑÑ€ĞµĞ´Ğ½Ğ¸Ğ¹ ÑĞ±Ñ‹Ñ‚ Ñ‚Ğ¾Ğ²Ğ°Ñ€Ğ° '" << column_to_name(finest_average_count_index) << "' Ğ² Ğ´ĞµĞ½ÑŒ: " <<
+				finest_average_count << " ÑˆÑ‚\n";
+			cout << "Ğ¥ÑƒĞ´ÑˆĞ¸Ğ¹ ÑÑ€ĞµĞ´Ğ½Ğ¸Ğ¹ ÑĞ±Ñ‹Ñ‚ Ñ‚Ğ¾Ğ²Ğ°Ñ€Ğ° '" << column_to_name(worst_average_count_index) << "' Ğ² Ğ´ĞµĞ½ÑŒ: " <<
+				worst_average_count << " ÑˆÑ‚\n";
 
 			int finest_average_total_index = find_max_col_sum_index(totals);
 			double finest_average_total = sum_col(totals, finest_average_total_index) / 30.;
 			int worst_average_total_index = find_min_col_sum_index(totals);
 			double worst_average_total = sum_col(totals, worst_average_total_index) / 30.;
 
-			cout << "Ëó÷øàÿ ñğåäíÿÿ âûğó÷êà îò òîâàğà '" << column_to_name(finest_average_total_index) << "' â äåíü: "
+			cout << "Ğ›ÑƒÑ‡ÑˆĞ°Ñ ÑÑ€ĞµĞ´Ğ½ÑÑ Ğ²Ñ‹Ñ€ÑƒÑ‡ĞºĞ° Ğ¾Ñ‚ Ñ‚Ğ¾Ğ²Ğ°Ñ€Ğ° '" << column_to_name(finest_average_total_index) << "' Ğ² Ğ´ĞµĞ½ÑŒ: "
 				<<
-				finest_average_total << " ğ\n";
-			cout << "Õóäøèé ñğåäíÿÿ âûğó÷êà îò òîâàğà '" << column_to_name(worst_average_total_index) << "' â äåíü: " <<
-				worst_average_total << " ğ\n";
+				finest_average_total << " Ñ€\n";
+			cout << "Ğ¥ÑƒĞ´ÑˆĞ¸Ğ¹ ÑÑ€ĞµĞ´Ğ½ÑÑ Ğ²Ñ‹Ñ€ÑƒÑ‡ĞºĞ° Ğ¾Ñ‚ Ñ‚Ğ¾Ğ²Ğ°Ñ€Ğ° '" << column_to_name(worst_average_total_index) << "' Ğ² Ğ´ĞµĞ½ÑŒ: " <<
+				worst_average_total << " Ñ€\n";
 		}
 		else
 		{
-			cout << "Ïğîèçîøëà îøèáêà ïğè ÷òåíèè ôàéëîâ!\nÏîæàëóéñòà, çàïóñòèòå ïğîãğàììó â ğåæèìå ãåíåğàöèè!\n";
+			cout << "ĞŸÑ€Ğ¾Ğ¸Ğ·Ğ¾ÑˆĞ»Ğ° Ğ¾ÑˆĞ¸Ğ±ĞºĞ° Ğ¿Ñ€Ğ¸ Ñ‡Ñ‚ĞµĞ½Ğ¸Ğ¸ Ñ„Ğ°Ğ¹Ğ»Ğ¾Ğ²!\nĞŸĞ¾Ğ¶Ğ°Ğ»ÑƒĞ¹ÑÑ‚Ğ°, Ğ·Ğ°Ğ¿ÑƒÑÑ‚Ğ¸Ñ‚Ğµ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ñƒ Ğ² Ñ€ĞµĞ¶Ğ¸Ğ¼Ğµ Ğ³ĞµĞ½ĞµÑ€Ğ°Ñ†Ğ¸Ğ¸!\n";
 		}
 	}
 
